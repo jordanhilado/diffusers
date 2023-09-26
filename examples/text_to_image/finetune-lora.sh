@@ -1,4 +1,4 @@
-export MODEL_NAME="CompVis/stable-diffusion-v1-4"
+export MODEL_NAME="runwayml/stable-diffusion-v1-5"
 export DATASET_NAME="lambdalabs/pokemon-blip-captions"
 
 accelerate launch --mixed_precision="fp16" train_text_to_image_lora.py \
