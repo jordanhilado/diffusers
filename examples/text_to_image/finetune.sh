@@ -1,7 +1,5 @@
 # export MODEL_NAME="CompVis/stable-diffusion-v1-4"
-# export MODEL_NAME="runwayml/stable-diffusion-v1-5"
-
-export MODEL_NAME="stabilityai/control-lora"
+export MODEL_NAME="runwayml/stable-diffusion-v1-5"
 export DATASET_NAME="lambdalabs/pokemon-blip-captions"
 
 accelerate launch --mixed_precision="fp16"  train_text_to_image.py \
@@ -16,4 +14,4 @@ accelerate launch --mixed_precision="fp16"  train_text_to_image.py \
   --learning_rate=1e-05 \
   --max_grad_norm=1 \
   --lr_scheduler="constant" --lr_warmup_steps=0 \
-  --output_dir="sd-pokemon-model" 
+  --output_dir="sd-1-5-pokemon-model" 
