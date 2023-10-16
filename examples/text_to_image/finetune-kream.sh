@@ -1,6 +1,6 @@
-export MODEL_NAME="CompVis/stable-diffusion-v1-1"
-export OUTPUT_DIR="sd-1-1-kream-lora"
-export HUB_MODEL_ID="jordanhilado/sd-1-1-kream-lora"
+export MODEL_NAME="runwayml/stable-diffusion-v1-5"
+export OUTPUT_DIR="sd-1-5-kream-lora"
+export HUB_MODEL_ID="jordanhilado/sd-1-5-kream-lora"
 export DATASET_NAME="hahminlew/kream-product-blip-captions"
 
 accelerate launch --mixed_precision="fp16"  train_text_to_image_lora.py \
