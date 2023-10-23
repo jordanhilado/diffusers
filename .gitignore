@@ -141,6 +141,7 @@ runs
 /examples/runs
 /examples/**/*.args
 /examples/rag/sweep
+/examples/text_to_image/generated_images
 
 # data
 /data
