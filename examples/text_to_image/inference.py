@@ -33,7 +33,9 @@ models = {
     },
 }
 
-lora_model_id, prompt, output_file = models[1]
+model_choice = 0
+
+lora_model_id, prompt, output_file = models[model_choice]["name"], models[model_choice]["prompt"], models[model_choice]["output_file"]
 
 
 def filename(scale):
@@ -44,7 +46,7 @@ card = RepoCard.load(lora_model_id)
 base_model_id = card.data.to_dict()["base_model"]
 
 pipe = StableDiffusionPipeline.from_pretrained(
-    base_model_id, torch_dtype=torch.float16, use_safetensors=True, safety_checker=None
+    base_model_id, torch_dtype=torch.float16, safety_checker=None
 )
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 
