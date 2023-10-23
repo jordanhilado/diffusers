@@ -10,13 +10,34 @@ models = [
     "jordanhilado/sd-1-1-kream-lora",
 ]
 
-lora_model_id = models[1]
+models = {
+    0: {
+        "name": "jordanhilado/sd-1-1-pokemon-lora",
+        "prompt": "A pokemon red and white cartoon ball with an angry look on its face",
+        "output_file": "1-1-pokemon",
+    },
+    1: {
+        "name": "jordanhilado/sd-1-5-pokemon-lora",
+        "prompt": "A pokemon red and white cartoon ball with an angry look on its face",
+        "output_file": "1-5-pokemon",
+    },
+    2: {
+        "name": "jordanhilado/sd-1-1-sketch-scene",
+        "prompt": "A sketch of a scene with a tree and a house",
+        "output_file": "1-1-sketch",
+    },
+    3: {
+        "name": "jordanhilado/sd-1-1-kream-lora",
+        "prompt": "A black nike jacket with a hoodie and zipper",
+        "output_file": "1-1-kream",
+    },
+}
 
-prompt = "A pokemon red and white cartoon ball with an angry look on its face"
+lora_model_id, prompt, output_file = models[1]
 
 
 def filename(scale):
-    return f"pokemon_red_white_ball_scale_{scale}.png"
+    return f"{output_file}-scale-{scale}.png"
 
 
 card = RepoCard.load(lora_model_id)
