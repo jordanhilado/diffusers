@@ -3,13 +3,6 @@ from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from huggingface_hub.repocard import RepoCard
 from PIL import Image
 
-models = [
-    "jordanhilado/sd-1-1-pokemon-lora",
-    "jordanhilado/sd-1-5-pokemon-lora",
-    "jordanhilado/sd-1-1-sketch-scene",
-    "jordanhilado/sd-1-1-kream-lora",
-]
-
 models = {
     0: {
         "name": "jordanhilado/sd-1-1-pokemon-lora",
@@ -31,9 +24,14 @@ models = {
         "prompt": "A black nike jacket with a hoodie and zipper",
         "output_file": "1-1-kream",
     },
+    4: {
+        "name": "jordanhilado/sd-1-5-kream-lora",
+        "prompt": "A black nike jacket with a hoodie and zipper",
+        "output_file": "1-5-kream"
+    }
 }
 
-model_choice = 0
+model_choice = 4
 
 lora_model_id, prompt, output_file = models[model_choice]["name"], models[model_choice]["prompt"], models[model_choice]["output_file"]
 
