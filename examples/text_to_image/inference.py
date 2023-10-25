@@ -20,20 +20,29 @@ models = {
         "output_file": "1-1-sketch",
     },
     3: {
+        "name": "jordanhilado/sd-1-5-sketch-scene",
+        "prompt": "A sketch of a scene with a tree and a house",
+        "output_file": "1-5-sketch",
+    },
+    4: {
         "name": "jordanhilado/sd-1-1-kream-lora",
         "prompt": "A black nike jacket with a hoodie and zipper",
         "output_file": "1-1-kream",
     },
-    4: {
+    5: {
         "name": "jordanhilado/sd-1-5-kream-lora",
         "prompt": "A black nike jacket with a hoodie and zipper",
-        "output_file": "1-5-kream"
-    }
+        "output_file": "1-5-kream",
+    },
 }
 
 model_choice = 4
 
-lora_model_id, prompt, output_file = models[model_choice]["name"], models[model_choice]["prompt"], models[model_choice]["output_file"]
+lora_model_id, prompt, output_file = (
+    models[model_choice]["name"],
+    models[model_choice]["prompt"],
+    models[model_choice]["output_file"],
+)
 
 
 def filename(scale):
@@ -43,9 +52,7 @@ def filename(scale):
 card = RepoCard.load(lora_model_id)
 base_model_id = card.data.to_dict()["base_model"]
 
-pipe = StableDiffusionPipeline.from_pretrained(
-    base_model_id, torch_dtype=torch.float16, safety_checker=None
-)
+pipe = StableDiffusionPipeline.from_pretrained(base_model_id, torch_dtype=torch.float16, safety_checker=None)
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 
 pipe.unet.load_attn_procs(lora_model_id)

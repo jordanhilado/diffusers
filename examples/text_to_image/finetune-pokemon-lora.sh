@@ -1,5 +1,5 @@
 export MODEL_NAME="CompVis/stable-diffusion-v1-1"
-export OUTPUT_DIR="sd-1-1-finetune-lora-2"
+export OUTPUT_DIR="trained_models/sd-1-1-finetune-lora-2"
 export HUB_MODEL_ID="jordanhilado/sd-1-1-pokemon-lora"
 export DATASET_NAME="lambdalabs/pokemon-blip-captions"
 
