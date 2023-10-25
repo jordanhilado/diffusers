@@ -142,6 +142,7 @@ runs
 /examples/**/*.args
 /examples/rag/sweep
 /examples/text_to_image/generated_images
+/examples/text_to_image/trained_models
 
 # data
 /data
