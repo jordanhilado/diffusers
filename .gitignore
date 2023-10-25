@@ -143,7 +143,6 @@ runs
 /examples/rag/sweep
 /examples/text_to_image/generated_images
 /examples/text_to_image/trained_models
-/examples/text_to_image/results/assets
 
 # data
 /data
