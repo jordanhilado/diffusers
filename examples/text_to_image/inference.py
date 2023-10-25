@@ -3,40 +3,46 @@ from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from huggingface_hub.repocard import RepoCard
 from PIL import Image
 
+prompts = [
+        "A blue dragon pokemon flying through the air",
+        "A sketch of a scene of two walking zebras in a jungle",
+        "Green Arc'teryx jacket with a hood and a white logo on the front"
+]
+
 models = {
     0: {
         "name": "jordanhilado/sd-1-1-pokemon-lora",
-        "prompt": "A pokemon red and white cartoon ball with an angry look on its face",
+        "prompt": prompts[0],
         "output_file": "1-1-pokemon",
     },
     1: {
         "name": "jordanhilado/sd-1-5-pokemon-lora",
-        "prompt": "A pokemon red and white cartoon ball with an angry look on its face",
+        "prompt": prompts[0],
         "output_file": "1-5-pokemon",
     },
     2: {
-        "name": "jordanhilado/sd-1-1-sketch-scene",
-        "prompt": "A sketch of a scene with a tree and a house",
+        "name": "jordanhilado/sd-1-1-sketch-lora",
+        "prompt": prompts[1],
         "output_file": "1-1-sketch",
     },
     3: {
-        "name": "jordanhilado/sd-1-5-sketch-scene",
-        "prompt": "A sketch of a scene with a tree and a house",
+        "name": "jordanhilado/sd-1-5-sketch-lora",
+        "prompt": prompts[1],
         "output_file": "1-5-sketch",
     },
     4: {
         "name": "jordanhilado/sd-1-1-kream-lora",
-        "prompt": "A black nike jacket with a hoodie and zipper",
+        "prompt": prompts[2],
         "output_file": "1-1-kream",
     },
     5: {
         "name": "jordanhilado/sd-1-5-kream-lora",
-        "prompt": "A black nike jacket with a hoodie and zipper",
+        "prompt": prompts[2],
         "output_file": "1-5-kream",
     },
 }
 
-model_choice = 4
+model_choice = 5
 
 lora_model_id, prompt, output_file = (
     models[model_choice]["name"],
