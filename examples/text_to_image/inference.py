@@ -7,16 +7,21 @@ prompts = {
     0: [
         "A pokemon red and white cartoon ball with an angry look on its face",
         "A sketch of a scene with a tree and a house",
-        "A black nike jacket with a hoodie and zipper",
+        "A black Nike jacket with a hoodie and zipper",
     ],
     1: [
         "A blue dragon pokemon flying through the air",
         "A sketch of a scene of two walking zebras in a jungle",
-        "Green Arc'teryx jacket with a hood and a white logo on the front",
+        "A Green Arc'teryx jacket with a hood and a white logo on the front",
     ],
+    2: [
+        "A green pokemon fish with big eyes",
+        "A sketch of a scene of an airplane flying in the air",
+        "A Levi's orange vest with a zipper and collar",
+    ]
 }
 
-prompt_choice = 1
+prompt_choice = 2
 
 models = {
     0: {
